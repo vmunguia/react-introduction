@@ -14,9 +14,10 @@ class Product extends Component {
 	render() {
 		return (
 			<div>
-				<p>Android - $199</p>
+				<p>{this.props.name} - ${this.props.price}</p>
 				<button onClick={this.buy}>Buy</button>
 				<h3>Qty: {this.state.qty} item(s)</h3>
+				<hr/>
 			</div>
 		);
 	}

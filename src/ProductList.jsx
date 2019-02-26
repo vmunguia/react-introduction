@@ -6,9 +6,9 @@ class ProductList extends Component {
 	render() {
 		return (
 			<div>
-				<Product/>
-				<Product/>
-				<Product/>
+				<Product name="Android" price="101"/>
+				<Product name="Apple" price="123"/>
+				<Product name="Nokia" price="69"/>
 				<Total/>
 			</div>
 		);
