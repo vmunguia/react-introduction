@@ -5,12 +5,13 @@ class Product extends Component {
 		super(props);
 		this.state = {qty: 0};
 	}
-	
+
 	buy: function = () => {
 		this.setState({qty: this.state.qty + 1});
+		this.props.handleTotal(this.props.price);
 		//alert("You bought an Android mobile.");
 	}
-	
+
 	show: function = () => {
 		this.props.handleShow(this.props.name);
 	}
