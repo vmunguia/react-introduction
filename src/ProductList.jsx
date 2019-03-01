@@ -5,7 +5,14 @@ import Total from './Total';
 class ProductList extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {total: 0};
+		this.state = {
+			total: 0,
+			productList: [
+			{name: "Android", price: 101},
+			{name: "Apple", price: 123},
+			{name: "Nokia", price: 69}
+			]
+		};
 	}
 
 	showProduct: function = (name) => {
@@ -18,11 +25,16 @@ class ProductList extends Component {
 	}
 
 	render() {
+		var component = this;
+		var products = this.state.productList.map(function(product) {
+			return (
+				<Product name={product.name} price={product.price} handleShow={component.showProduct} handleTotal={component.calculateTotal}/>
+			);
+		});
+
 		return (
 			<div>
-				<Product name="Android" price={101} handleShow={this.showProduct} handleTotal={this.calculateTotal}/>
-				<Product name="Apple" price={123} handleShow={this.showProduct} handleTotal={this.calculateTotal}/>
-				<Product name="Nokia" price={69} handleShow={this.showProduct} handleTotal={this.calculateTotal}/>
+				{products}
 				<Total total={this.state.total}/>
 			</div>
 		);
