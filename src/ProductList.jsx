@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Product from './Product';
 import Total from './Total';
+import ProductForm from './ProductForm';
 
 class ProductList extends Component {
 	constructor(props) {
@@ -8,9 +9,9 @@ class ProductList extends Component {
 		this.state = {
 			total: 0,
 			productList: [
-			{name: "Android", price: 101},
-			{name: "Apple", price: 123},
-			{name: "Nokia", price: 69}
+				{name: "Android", price: 101},
+				{name: "Apple", price: 123},
+				{name: "Nokia", price: 69}
 			]
 		};
 	}
@@ -34,6 +35,7 @@ class ProductList extends Component {
 
 		return (
 			<div>
+				<ProductForm />
 				{products}
 				<Total total={this.state.total}/>
 			</div>
