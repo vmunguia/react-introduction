@@ -3,7 +3,14 @@ import React, { Component } from 'react';
 class ProductForm extends Component {
 	submit: function = (e) => {
 		e.preventDefault();
-		alert('Name: ' + this.refs.name.value + ' - Price: $' + this.refs.price.value);
+		//alert('Name: ' + this.refs.name.value + ' - Price: $' + this.refs.price.value);
+
+		var product = {
+			name: this.refs.name.value,
+			price: parseInt(this.refs.price.value)
+		};
+
+		this.props.handleCreate(product);
 
 		this.refs.name.value = "";
 		this.refs.price.value = "";

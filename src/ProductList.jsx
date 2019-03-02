@@ -16,6 +16,12 @@ class ProductList extends Component {
 		};
 	}
 
+	createProduct: function = (product) => {
+		this.setState({
+			productList: this.state.productList.concat(product)
+		});
+	}
+
 	showProduct: function = (name) => {
 		alert("You selected " + name);
 	}
@@ -35,7 +41,7 @@ class ProductList extends Component {
 
 		return (
 			<div>
-				<ProductForm />
+				<ProductForm handleCreate={this.createProduct}/>
 				{products}
 				<Total total={this.state.total}/>
 			</div>
